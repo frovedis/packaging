@@ -4,9 +4,17 @@ This directory contains tools for building and packaging Frovedis.
 The scripts assumes that the platform is CentOS/RedHat 7.
 If you do not change the install path, you can easily build it.
 
+If you place Frovedis codes both in ../x86 and ../ve, and boost-ve 
+in ../boost-ve, you can just execute ./do_everything.sh.
+It downloads required software, builds them, installs them and
+builds Frovedis for x86 and VE. Then it crates rpm of Frovedis.
+You will be required to type passwords for sudo.
+(We assume versino 1.0.0 of NLC is installed on SX-Aurora TSUBASA.)
+
+If you want to manually build and install, follow the steps below.
+
 The script build.sh downloads packages for Spark build and execution
-(Scala, Spark and Zeppelin), and Open MPI for MPI implementation of
-x86. 
+(Scala and Spark), and Open MPI for MPI implementation of x86. 
 
 (We chosed to build Open MPI manually, because rpm package installed
 by yum might conflict with pre-installed Infiniband library on
@@ -37,6 +45,8 @@ following settings, because BLAS, LAPACK and ScaLAPACK are in NLC.
 In this case, please confirm that the version of NLC is the same as
 that of in Makefile.in.ve, which is used for linking path.
 Currently, we assume the version is 1.0.0.
+In the case of do_everything.sh script, this modificaiton is
+automatically done.
 
 In addition, in the case of SX-Aurora TSUBASA, you need to install
 boost-ve separately. Please make sure the install path of the
