@@ -11,6 +11,9 @@ fi
 if [ ! -f spark-2.2.1-bin-hadoop2.7.tgz ]; then
 	wget `cat spark-2.2.1-bin-hadoop2.7.tgz.URL`
 fi
+if [ ! -d ../build ]; then
+	mkdir ../build
+fi
 cd ../build
 tar -zxf ../tgz/openmpi-3.0.0.tar.gz
 cd openmpi-3.0.0
