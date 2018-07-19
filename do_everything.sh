@@ -11,6 +11,8 @@
 
 # We assume the OS is CentOS/RedHat7
 
+set -eu
+
 if [ ! -d ../x86 ] && [ ! -d ../ve ] && [ ! -d ../boost-ve ]; then
 	echo "Place Frovedis in ../x86 and ../ve, and boost-ve in ../boost-ve"
 	exit 1

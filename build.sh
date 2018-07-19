@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu
 
 . ./x86env.sh
 cd ./tgz

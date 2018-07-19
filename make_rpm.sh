@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu
 
 # https://stackoverflow.com/questions/880227/what-is-the-minimum-i-have-to-do-to-create-an-rpm-file
 # http://dev.tapweb.co.jp/2010/12/273
@@ -49,6 +50,7 @@ Requires: gcc-c++
 Requires: gcc-gfortran
 Requires: java-1.8.0-openjdk-devel
 Requires: python-devel
+Requires: python-pandas
 Requires: scipy
 
 %description

@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu
 
 if [ $# -eq 1 ]; then
 	if [ -z "${X86_INSTALLPATH}" ] || [ -z "${ZEPPELIN}" ] ; then
