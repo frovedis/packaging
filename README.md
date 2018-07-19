@@ -4,19 +4,39 @@ This directory contains tools for building and packaging Frovedis.
 The scripts assumes that the platform is CentOS/RedHat 7.
 If you do not change the install path, you can easily build it.
 
+After the build, rpm file will be created in /tmp/rpmbuild/RPMS/x86_64/.
+Please refer to getting_started.md that will be installed into 
+${INSTALL} directory.
+
+## Build all modules with one script
+
 If you place Frovedis codes both in ../x86 and ../ve, and boost-ve 
 in ../boost-ve, you can just execute ./do_everything.sh.
+For example,
+
+    $ git clone https://github.com/frovedis/frovedis x86
+    $ git clone https://github.com/frovedis/frovedis ve
+    $ git clone https://github.com/frovedis/boost-ve
+    $ git clone https://github.com/frovedis/packaging
+    $ cd packaging
+    $ ./do_everything.sh
+
 It downloads required software, builds them, installs them and
 builds Frovedis for x86 and VE. Then it crates rpm of Frovedis.
-You will be required to type passwords for sudo.
 (We assume versino 1.0.0 of NLC is installed on SX-Aurora TSUBASA.)
+
+Internally sudo is used, so you might be required to type passwords for
+sudo. Since it will take a long time to build, it would be better to
+enable sudo without password, because sudo with password might timeout.
+
+## Manual build
 
 If you want to manually build and install, follow the steps below.
 
 The script build.sh downloads packages for Spark build and execution
 (Scala and Spark), and Open MPI for MPI implementation of x86. 
 
-(We chosed to build Open MPI manually, because rpm package installed
+(We chose to build Open MPI manually, because rpm package installed
 by yum might conflict with pre-installed Infiniband library on
 SX-Aurora TSUBASA...)
 
@@ -56,8 +76,5 @@ On SX-Aurora TSUBASA, we recommend to install both x86 and VE
 version. To build both versions, it would be convenient to extract
 Frovedis source code in separate directories.
 
-Please refer to getting_started.md that will be installed into 
-${INSTALL} directory.
-
 After installing Frovedis, you can create rpm by calling make_rpm.sh.
-It will be build in /tmp/rpmbuild/RPMS/x86_64/.
+It will be built in /tmp/rpmbuild/RPMS/x86_64/.
