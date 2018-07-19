@@ -6,7 +6,7 @@ If you do not change the install path, you can easily build it.
 
 After the build, rpm file will be created in /tmp/rpmbuild/RPMS/x86_64/.
 Please refer to getting_started.md that will be installed into 
-${INSTALL} directory.
+${INSTALL} directory, which is /opt/nec/ve/nosupport/frovedis by default.
 
 ## Build all modules with one script
 
