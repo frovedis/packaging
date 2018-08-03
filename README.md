@@ -14,6 +14,7 @@ If you place Frovedis codes both in ../x86 and ../ve, and boost-ve
 in ../boost-ve, you can just execute ./do_everything.sh.
 For example,
 
+    $ source /opt/nec/ve/mpi/${YOUR_MPI_VERSION}/bin/necmpivars.sh
     $ git clone https://github.com/frovedis/frovedis x86
     $ git clone https://github.com/frovedis/frovedis ve
     $ git clone https://github.com/frovedis/boost-ve
@@ -23,7 +24,6 @@ For example,
 
 It downloads required software, builds them, installs them and
 builds Frovedis for x86 and VE. Then it crates rpm of Frovedis.
-(We assume versino 1.0.0 of NLC is installed on SX-Aurora TSUBASA.)
 
 Internally sudo is used, so you might be required to type passwords for
 sudo. Since it will take a long time to build, it would be better to
@@ -64,7 +64,6 @@ following settings, because BLAS, LAPACK and ScaLAPACK are in NLC.
 
 In this case, please confirm that the version of NLC is the same as
 that of in Makefile.in.ve, which is used for linking path.
-Currently, we assume the version is 1.0.0.
 In the case of do_everything.sh script, this modificaiton is
 automatically done.
 
