@@ -6,7 +6,7 @@ set -eu
 
 . ./x86env.sh
 
-VER=0.7.0
+VER=0.7.2
 PKG=frovedis-${VER}
 
 rm -fr /tmp/rpmbuild
@@ -38,7 +38,7 @@ Autoreq: 0
 Summary: Framework of vectorized and distributed data analytics
 Name: frovedis
 Version: ${VER}
-Release: 1
+Release: 0
 License: BSD
 Group: Development/Tools
 SOURCE0 : %{name}-%{version}.tar.gz
@@ -73,6 +73,11 @@ cp -a * %{buildroot}
 rm -rf %{buildroot}
 
 %changelog
+* Fri Aug  3 2018 Takuya Araki <t-araki@dc.jp.nec.com>
+- Support Spark/Python interface of dataframe
+- Added shared memory between MPI ranks in one node (experimental)
+- Support conversion from dftable to matrix
+- Improved packaging (remove dependency to NLC/MPI version)
 * Tue May 29 2018 Takuya Araki <t-araki@dc.jp.nec.com>
 - Update
 * Wed Feb 28 2018 Takuya Araki <t-araki@dc.jp.nec.com>
