@@ -108,6 +108,13 @@ This is implemented as a server; the server accepts RPC (remote
 procedure call) to provide the above functionalities from Spark or
 Python. The server can run on both x86 and VE.
 
+To run the server, the network should be configured properly.
+Please check if
+
+    $ hostname -i
+
+returns the correct IP address.
+
 To use x86 version of the server, first source ./x86/bin/x86env.sh
 It also includes various environment variables for Spark and Python.
 Spark and Scala are already installed in ./x86/opt.
