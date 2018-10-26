@@ -1,6 +1,9 @@
 #!/bin/sh
-set -eu
 
+# required for pandas; if installed return error so do not set -e
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+set -eu
 # make it dependent
 yum install boost-devel
 yum install gcc gcc-c++ gcc-gfortran
