@@ -29,6 +29,10 @@ Internally sudo is used, so you might be required to type passwords for
 sudo. Since it will take a long time to build, it would be better to
 enable sudo without password, because sudo with password might timeout.
 
+During the compilation, you would see various warnings; you can safely
+ignore them as long as the compilation proceeds. Sometimes nc++ aborts
+with SIGSEGV. In this case, you need to run make again...
+
 ## Manual build
 
 If you want to manually build and install, follow the steps below.
