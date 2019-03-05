@@ -25,4 +25,4 @@ export SPARK_HOME=${X86_INSTALLPATH}/opt/${SPARK}
 export SPARK_SUBMIT_OPTIONS="--driver-java-options \"-Djava.library.path=${X86_INSTALLPATH}/lib\" --jars ${X86_INSTALLPATH}/lib/spark/frovedis_client.jar --conf spark.driver.memory=8g"
 export PYTHONPATH=${X86_INSTALLPATH}/lib/python
 ldpath_append ${X86_INSTALLPATH}/lib
-export MANPATH=`manpath`:${X86_INSTALLPATH}/man
+export MANPATH=`manpath -q`:${X86_INSTALLPATH}/man
