@@ -6,7 +6,7 @@ set -eu
 
 . ./x86env.sh
 
-VER=0.9.0
+VER=0.9.1
 PKG=frovedis-${VER}
 
 rm -fr /tmp/rpmbuild
@@ -38,7 +38,7 @@ Autoreq: 0
 Summary: Framework of vectorized and distributed data analytics
 Name: frovedis
 Version: ${VER}
-Release: 0
+Release: musl
 License: BSD
 Group: Development/Tools
 SOURCE0 : %{name}-%{version}.tar.gz
