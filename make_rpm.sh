@@ -6,7 +6,7 @@ set -eu
 
 . ./x86env.sh
 
-VER=0.9.1
+VER=0.9.3
 PKG=frovedis-${VER}
 
 rm -fr /tmp/rpmbuild
@@ -52,6 +52,8 @@ Requires: java-1.8.0-openjdk-devel
 Requires: python-devel
 Requires: python-pandas
 Requires: scipy
+Requires: python2-pip
+Requires: python-virtualenv
 
 %description
 %{summary}
