@@ -32,4 +32,5 @@ export PYTHONPATH=${X86_INSTALLPATH}/lib/python
 ldpath_append ${X86_INSTALLPATH}/lib
 export MANPATH=`manpath -q`
 manpath_append ${VE_INSTALLPATH}/man
+export FROVEDIS_SEQUENTIAL_SAVE=true # for NFS that doesn't support multi writer
 export VE_LD_PRELOAD=libveaccio.so.1
