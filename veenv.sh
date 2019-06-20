@@ -12,6 +12,10 @@ manpath_append ()  { manpath_remove $1; export MANPATH="$MANPATH:$1"; }
 manpath_prepend () { manpath_remove $1; export MANPATH="$1:$MANPATH"; }
 manpath_remove ()  { export MANPATH=`echo -n $MANPATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
 
+if [ -z "$NMPI_ROOT" ]; then
+	MPIVAR=`ls /opt/nec/ve/mpi | grep ^[0-9] | sort -V -r | head -1`
+	source /opt/nec/ve/mpi/${MPIVAR}/bin/necmpivars.sh
+fi
 export INSTALLPATH=/opt/nec/nosupport/frovedis
 export X86_INSTALLPATH=${INSTALLPATH}/x86
 export VE_INSTALLPATH=${INSTALLPATH}/ve
@@ -20,7 +24,6 @@ SCALA=scala-2.11.12
 SPARK=spark-2.2.1-bin-hadoop2.7
 export ZEPPELIN=zeppelin-0.7.3-bin-netinst
 path_remove ${X86_INSTALLPATH}/opt/openmpi/bin
-which mpirun > /dev/null || (echo "Please set VE version of mpirun to PATH" 1>&2; return)
 path_append ${X86_INSTALLPATH}/opt/${SCALA}/bin
 path_append ${X86_INSTALLPATH}/opt/${SPARK}/bin
 path_append ${X86_INSTALLPATH}/opt/${SPARK}/sbin
