@@ -32,3 +32,4 @@ ldpath_append ${X86_INSTALLPATH}/lib
 export MANPATH=`manpath -q`
 manpath_append ${X86_INSTALLPATH}/man
 export FROVEDIS_SEQUENTIAL_SAVE=true # for NFS that doesn't support multi writer
+export OMP_NUM_THREADS=1 # needed for VE; just for consistency

@@ -37,3 +37,4 @@ export MANPATH=`manpath -q`
 manpath_append ${VE_INSTALLPATH}/man
 export FROVEDIS_SEQUENTIAL_SAVE=true # for NFS that doesn't support multi writer
 export VE_LD_PRELOAD=libveaccio.so.1
+export OMP_NUM_THREADS=1 # needed for frovedis_server; otherwise it stucks!
