@@ -54,6 +54,7 @@ Requires: python-pandas
 Requires: scipy
 Requires: python2-pip
 Requires: python-virtualenv
+Requires: numactl-devel
 
 %description
 %{summary}

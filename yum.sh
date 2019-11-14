@@ -15,3 +15,5 @@ yum install python-pandas.x86_64
 yum install scipy.x86_64
 yum install python2-pip
 yum install python-virtualenv
+# for OpenMPI
+yum install numactl-devel
