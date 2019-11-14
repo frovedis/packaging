@@ -1,4 +1,5 @@
-% Frovedis: NEC **fr**amework **o**f **ve**ctorized and **dis**tributed data analytics
+Frovedis: Framework of vectorized and distributed data analytics
+===
 
 # 1. Introduction
 
@@ -91,35 +92,33 @@ in the MPI installed directory.) Please do not source x86env.sh above.
 
 After that, you can do similarly as x86 version; use Makefile and
 Makefile.in.ve in ./ve/doc/tutorial/src directory, etc.
-Please note that command line option of mpirun is different from x86
-version:  You need to add extra "-x" before the binary.
-
-    $ mpirun -np 4 -x ./tut
-
-To use multiple VEs, you need different options. Please refer to the
-MPI manual.
 
 
 # 3. Spark/Python interafce
 
 You can utilize the predefined functionalities from Spark/Python,
-which includes machine learning algorithms and matrix operations.
+which includes machine learning algorithms, matrix operations and
+dataframe operations. 
 This is implemented as a server; the server accepts RPC (remote
 procedure call) to provide the above functionalities from Spark or
 Python. The server can run on both x86 and VE.
 
 To run the server, the network should be configured properly.
-Please check if
-
-    $ hostname -i
-
-returns the correct IP address.
+*Plaese make sure if your hostname (which can be obtained by hostname
+command) is in /etc/hosts or registered in DNS.*
+(myhostname in /etc/nsswitch.conf does not work for VE.)
 
 To use x86 version of the server, first source ./x86/bin/x86env.sh
 It also includes various environment variables for Spark and Python.
 Spark and Scala are already installed in ./x86/opt.
 
-Then, ./foreign_if_demo/[spark,python] includes the demo.
+Tutorial is in `${INSTALLPATH}`/doc/tutorial_spark/tutorial.[md,pdf],
+and `${INSTALLPATH}`/doc/tutorial_python/tutorial.[md,pdf].
+ The directory also contains small programs that are explained in the
+tutorial. You can copy the source files into your home directory and
+run them by yourself. 
+
+There is another demo in ./foreign_if_demo/[spark,python].
 Please copy these directories into your home directory (since it
 creates files). The scripts ./foreign_if_demo/spark/run_demo.sh and 
 ./foreign_if_demo/python/run_demo.sh run demos. As for Spark, compiled
