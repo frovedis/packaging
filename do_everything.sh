@@ -20,9 +20,13 @@ else
 	sudo ./yum.sh
 	./build.sh
 	sudo ./install.sh
+	set +u
 	source ./x86env.sh
+	set -u
 	(cd ../x86; make; sudo make install)
+	set +u
 	source ./veenv.sh
+	set -u
 	(cd ../boost-ve; ./build.sh; sudo ./install.sh)
 	cp Makefile.conf.ve ../ve/Makefile.conf
 	(cd ../ve; make; sudo make install)
