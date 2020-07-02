@@ -19,7 +19,7 @@ fi
 export INSTALLPATH=/opt/nec/nosupport/frovedis
 export X86_INSTALLPATH=${INSTALLPATH}/x86
 export VE_INSTALLPATH=${INSTALLPATH}/ve
-export FROVEDIS_SERVER="-x ${VE_INSTALLPATH}/bin/frovedis_server"
+export FROVEDIS_SERVER=${VE_INSTALLPATH}/bin/frovedis_server
 SCALA=scala-2.11.12
 SPARK=spark-2.2.1-bin-hadoop2.7
 export ZEPPELIN=zeppelin-0.7.3-bin-netinst
@@ -37,4 +37,4 @@ export MANPATH=`manpath -q`
 manpath_append ${VE_INSTALLPATH}/man
 export FROVEDIS_SEQUENTIAL_SAVE=true # for NFS that doesn't support multi writer
 export VE_LD_PRELOAD=libveaccio.so.1
-export OMP_NUM_THREADS=1 # needed for frovedis_server; otherwise it stucks!
+export VE_OMP_NUM_THREADS=1 # needed for frovedis_server; otherwise it stucks!
