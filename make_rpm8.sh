@@ -50,7 +50,6 @@ Requires: gcc-c++
 Requires: gcc-gfortran
 Requires: java-1.8.0-openjdk-devel
 Requires: python36-devel
-Requires: python3-pandas
 Requires: python3-scipy
 Requires: python3-pip
 Requires: numactl-devel
