@@ -9,7 +9,7 @@
 # in ../x86 and ../ve, and boost-ve is in
 # ../boost-ve
 
-# We assume the OS is CentOS/RedHat7
+# We assume the OS is CentOS/RedHat7 or 8
 
 set -eu
 
@@ -17,7 +17,12 @@ if [ ! -d ../x86 ] && [ ! -d ../ve ] && [ ! -d ../boost-ve ]; then
 	echo "Place Frovedis in ../x86 and ../ve, and boost-ve in ../boost-ve"
 	exit 1
 else
-	sudo ./yum.sh
+	. /etc/os-release
+	if [ $VERSION_ID -eq 7 ]; then
+		sudo ./yum.sh
+	else
+		sudo ./yum8.sh
+	fi
 	./build.sh
 	sudo ./install.sh
 	set +u
@@ -30,5 +35,9 @@ else
 	(cd ../boost-ve; ./build.sh; sudo ./install.sh)
 	cp Makefile.conf.ve ../ve/Makefile.conf
 	(cd ../ve; make; sudo make install)
-	./make_rpm.sh
+	if [ $VERSION_ID -eq 7 ]; then
+		./make_rpm.sh
+	else
+		./make_rpm8.sh
+	fi
 fi

@@ -6,7 +6,7 @@ set -eu
 
 . ./x86env.sh
 
-VER=0.9.6
+VER=0.9.7
 PKG=frovedis-${VER}
 
 rm -fr /tmp/rpmbuild
@@ -38,7 +38,7 @@ Autoreq: 0
 Summary: Framework of vectorized and distributed data analytics
 Name: frovedis
 Version: ${VER}
-Release: rh7
+Release: rh8
 License: BSD
 Group: Development/Tools
 SOURCE0 : %{name}-%{version}.tar.gz
@@ -49,12 +49,10 @@ Requires: gcc
 Requires: gcc-c++
 Requires: gcc-gfortran
 Requires: java-1.8.0-openjdk-devel
-Requires: python-devel
-Requires: python-pandas
-Requires: scipy
-Requires: python2-funcsigs
-Requires: python2-pip
-Requires: python-virtualenv
+Requires: python36-devel
+Requires: python3-pandas
+Requires: python3-scipy
+Requires: python3-pip
 Requires: numactl-devel
 
 %description
