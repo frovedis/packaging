@@ -16,9 +16,9 @@ export INSTALLPATH=/opt/nec/nosupport/frovedis
 export X86_INSTALLPATH=${INSTALLPATH}/x86
 export VE_INSTALLPATH=${INSTALLPATH}/ve
 export FROVEDIS_SERVER=${X86_INSTALLPATH}/bin/frovedis_server
-SCALA=scala-2.11.12
-SPARK=spark-2.2.1-bin-hadoop2.7
-export ZEPPELIN=zeppelin-0.7.3-bin-netinst
+SCALA=scala-2.12.14
+SPARK=spark-3.1.2-bin-hadoop3.2
+export ZEPPELIN=zeppelin-0.9.0-bin-netinst
 path_prepend ${X86_INSTALLPATH}/opt/openmpi/bin
 path_append ${X86_INSTALLPATH}/opt/${SCALA}/bin
 path_append ${X86_INSTALLPATH}/opt/${SPARK}/bin

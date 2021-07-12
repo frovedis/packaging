@@ -6,11 +6,11 @@ cd ./tgz
 if [ ! -f openmpi-3.0.0.tar.gz ]; then
 	wget `cat openmpi-3.0.0.tar.gz.URL`
 fi
-if [ ! -f scala-2.11.12.tgz ]; then
-	wget `cat scala-2.11.12.tgz.URL`
+if [ ! -f scala-2.12.14.tgz ]; then
+	wget `cat scala-2.12.14.tgz.URL`
 fi
-if [ ! -f spark-2.2.1-bin-hadoop2.7.tgz ]; then
-	wget `cat spark-2.2.1-bin-hadoop2.7.tgz.URL`
+if [ ! -f spark-3.1.2-bin-hadoop3.2.tgz ]; then
+	wget `cat spark-3.1.2-bin-hadoop3.2.tgz.URL`
 fi
 if [ ! -d ../build ]; then
 	mkdir ../build

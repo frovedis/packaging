@@ -144,6 +144,12 @@ Then you can access Zeppelin at default port 8080.
 include definition of environment variable "export ZEPPELIN_PORT=18080". 
 Please refer to the Zeppelin's manual). 
 
+Actually, enclosed version of Zeppelin (0.9.0) does not support 
+enclosed version of Spark (3.1.2) yet. So you need to change
+"zeppelin.spark.enableSupportedVersionCheck" from true to false, 
+which is in right upper corner "Anonymous"->"Interpreter".
+Otherwise, you will see "Fail to open SparkInterpreter" error.
+
 The extaction script above also copies json files that contain sample
 notes: Normal_Spark.json and Spark_with_Frovedis.json. You can import
 these notes by the Web UI (If you are running the browser on a
