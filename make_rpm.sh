@@ -6,7 +6,7 @@ set -eu
 
 . ./x86env.sh
 
-VER=0.9.10
+VER=0.10.0
 PKG=frovedis-${VER}
 
 rm -fr /tmp/rpmbuild
