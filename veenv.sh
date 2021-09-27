@@ -16,7 +16,7 @@ if [ -z "$NMPI_ROOT" ]; then
 	MPIVAR=`ls /opt/nec/ve/mpi | grep ^[0-9] | sort -V -r | head -1`
 	source /opt/nec/ve/mpi/${MPIVAR}/bin/necmpivars.sh
 fi
-export INSTALLPATH=/opt/nec/nosupport/frovedis
+export INSTALLPATH=/opt/nec/frovedis
 export X86_INSTALLPATH=${INSTALLPATH}/x86
 export VE_INSTALLPATH=${INSTALLPATH}/ve
 export FROVEDIS_SERVER=${VE_INSTALLPATH}/bin/frovedis_server

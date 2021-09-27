@@ -12,7 +12,7 @@ manpath_append ()  { manpath_remove $1; export MANPATH="$MANPATH:$1"; }
 manpath_prepend () { manpath_remove $1; export MANPATH="$1:$MANPATH"; }
 manpath_remove ()  { export MANPATH=`echo -n $MANPATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
 
-export INSTALLPATH=/opt/nec/nosupport/frovedis
+export INSTALLPATH=/opt/nec/frovedis
 export X86_INSTALLPATH=${INSTALLPATH}/x86
 export VE_INSTALLPATH=${INSTALLPATH}/ve
 export FROVEDIS_SERVER=${X86_INSTALLPATH}/bin/frovedis_server
