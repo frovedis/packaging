@@ -38,7 +38,7 @@ Autoreq: 0
 Summary: Framework of vectorized and distributed data analytics
 Name: frovedis
 Version: ${VER}
-Release: rh8
+Release: 1.el8
 License: BSD
 Group: Development/Tools
 SOURCE0 : %{name}-%{version}.tar.gz
