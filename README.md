@@ -6,7 +6,7 @@ If you do not change the install path, you can easily build it.
 
 After the build, rpm file will be created in /tmp/rpmbuild/RPMS/x86_64/.
 Please refer to getting_started.md that will be installed into 
-${INSTALL} directory, which is /opt/nec/ve/nosupport/frovedis by default.
+${INSTALL} directory, which is /opt/nec/frovedis by default.
 
 ## Build all modules with one script
 
@@ -30,8 +30,7 @@ sudo. Since it will take a long time to build, it would be better to
 enable sudo without password, because sudo with password might timeout.
 
 During the compilation, you would see various warnings; you can safely
-ignore them as long as the compilation proceeds. Sometimes nc++ aborts
-with SIGSEGV. In this case, you need to run make again...
+ignore them as long as the compilation proceeds.
 
 ## Manual build
 
