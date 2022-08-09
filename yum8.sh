@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # required for pandas; if installed return error so do not set -e
-yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+# yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 set -eu
 # make it dependent
