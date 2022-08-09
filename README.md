@@ -32,6 +32,20 @@ enable sudo without password, because sudo with password might timeout.
 During the compilation, you would see various warnings; you can safely
 ignore them as long as the compilation proceeds.
 
+## Build for home directory installation
+
+You might want to create a package for installing Frovedis into user's
+home directory, in case the user does not have root privilege.
+In that case, please use
+
+    $ ./do_everything_home.sh
+
+instead of `do_everything.sh`. It creates tar.gz file in the home
+directory. Users can extract the tar.gz file at their home directory,
+which will create `opt` directory where Frovedis is installed.
+Files in the Frovedis installation (e.g. veenv.sh, x86env.sh) are
+changed according to the modified installation path.
+
 ## Manual build
 
 If you want to manually build and install, follow the steps below.
