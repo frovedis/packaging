@@ -18,7 +18,7 @@ if [ ! -d ../x86 ] && [ ! -d ../ve ] && [ ! -d ../boost-ve ]; then
 	exit 1
 else
 	. /etc/os-release
-	if [ $VERSION_ID -eq 7 ]; then
+	if [ $VERSION_ID = 7 ]; then
 		sudo ./yum.sh
 	else
 		sudo ./yum8.sh
