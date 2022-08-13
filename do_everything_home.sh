@@ -23,7 +23,7 @@ else
 	else
 		sudo ./yum8.sh
 	fi
-	./change_install_path.sh
+	./change_install_path_home.sh
 	./build.sh
 	./install.sh
 	set +u
