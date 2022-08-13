@@ -18,4 +18,4 @@ fi
 cd ../build
 tar -zxf ../tgz/openmpi-3.0.0.tar.gz
 cd openmpi-3.0.0
-./configure --prefix=${X86_INSTALLPATH}/opt/openmpi; make --without-verbs --without-ucx; make -j `/usr/bin/nproc`
+./configure --prefix=${X86_INSTALLPATH}/opt/openmpi --without-verbs --without-ucx; make -j `/usr/bin/nproc`
