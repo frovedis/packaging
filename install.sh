@@ -7,7 +7,6 @@ install -d ${X86_INSTALLPATH}/opt/licenses
 install -d ${X86_INSTALLPATH}/bin
 install -d ${VE_INSTALLPATH}/bin
 cd build/openmpi-3.0.0/; make install
-cp ../../openmpi-mca-params.conf ${X86_INSTALLPATH}/opt/openmpi/etc
 cp LICENSE ${X86_INSTALLPATH}/opt/licenses/LICENSE.openmpi
 cd ../../tgz
 tar -zxf ${SCALA}.tgz -C ${X86_INSTALLPATH}/opt/ --no-same-owner
