@@ -32,6 +32,23 @@ enable sudo without password, because sudo with password might timeout.
 During the compilation, you would see various warnings; you can safely
 ignore them as long as the compilation proceeds.
 
+## Change installation path
+
+If you want to install Frovedis other than /opt/nec/frovedis, you can
+use 
+
+    $ ./do_everything_tgz.sh /new/prefix/path
+
+instead of `do_everything.sh`. Here, `/opt/nec` is replaced by
+`/new/prefix/path`.
+
+It creates tar.gz file in /tmp. Since the installation directory is
+different, rpm is not used. Please make sure if necessary packages are
+installed if you copy the tar.gz file to another machine.
+
+Files in the Frovedis installation (e.g. veenv.sh, x86env.sh) are
+changed according to the modified installation path.
+
 ## Build for home directory installation
 
 You might want to create a package for installing Frovedis into user's
@@ -43,8 +60,12 @@ In that case, please use
 instead of `do_everything.sh`. It creates tar.gz file in the home
 directory. Users can extract the tar.gz file at their home directory,
 which will create `opt` directory where Frovedis is installed.
-Files in the Frovedis installation (e.g. veenv.sh, x86env.sh) are
-changed according to the modified installation path.
+
+Since user's home directory is different according to users, "~" is
+used as far as possible. Because Open MPI installation requires
+absolute path, symbolic link `/tmp/opt/openmpi` that points to the
+installed directory is created in x86env.sh and veenv.sh. If another
+user is using Frovedis in the same machine, this might cause conflict.
 
 ## Manual build
 
