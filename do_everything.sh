@@ -35,7 +35,7 @@ else
 	(cd ../boost-ve; ./build.sh; sudo ./install.sh)
 	cp Makefile.conf.ve ../ve/Makefile.conf
 	(cd ../ve; make; sudo make install)
-	if [ $VERSION_ID -eq 7 ]; then
+	if [ $VERSION_ID = 7 ]; then
 		./make_rpm.sh
 	else
 		./make_rpm8.sh
