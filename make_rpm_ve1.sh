@@ -36,7 +36,7 @@ Autoreq: 0
 %define        __os_install_post %{_dbpath}/brp-compress
 
 Summary: Framework of vectorized and distributed data analytics
-Name: frovedis
+Name: frovedis-ve1
 Version: ${VER}
 Release: 1.el8
 License: BSD
