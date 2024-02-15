@@ -9,7 +9,10 @@
 # in ../x86 and ../ve, and boost-ve is in
 # ../boost-ve
 
-# We assume the OS is CentOS/RedHat7 or 8
+# We assume the OS is CentOS/RedHat7 or Rocky/RedHat8
+# On Rocky/RedHat8, if "ve3" is passed as an argument,
+# created rpm includes "-ve3" in the file name.
+# Otherwise, "-ve1" is included.
 
 set -eu
 
@@ -38,6 +41,10 @@ else
 	if [ $VERSION_ID = 7 ]; then
 		./make_rpm.sh
 	else
-		./make_rpm8.sh
+	    if [ $# = 1 ] && [ $1 = "ve3" ]; then
+		./make_rpm_ve3.sh
+	    else
+		./make_rpm_ve1.sh
+	    fi
 	fi
 fi
