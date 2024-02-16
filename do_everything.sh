@@ -26,6 +26,9 @@ else
 	else
 		sudo ./yum8.sh
 	fi
+	if [ $# = 1 ] && [ $1 = "ve3" ]; then
+		./change_to_ve3.sh
+	fi
 	./build.sh
 	sudo ./install.sh
 	set +u
